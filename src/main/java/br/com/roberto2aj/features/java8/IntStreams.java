@@ -2,6 +2,12 @@ package br.com.roberto2aj.features.java8;
 
 import java.util.stream.IntStream;
 
+/**
+ * This class is used to show the IntStream Interface introduced in Java 8.
+ * IntStream is a specific type of Stream.
+ * @author roberto
+ *
+ */
 public class IntStreams {
 
 	public static void main(String[] args) {
@@ -20,30 +26,30 @@ public class IntStreams {
 		}
 
 		// New way. Much better. :)
-		IntStream.range(0, 101).forEach(n -> System.out.println(n));
+		IntStream.range(0, 101).forEach(System.out::println);
 
 		// This one is also an option. :)
-		IntStream.rangeClosed(0, 100).forEach(n -> System.out.println(n));
+		IntStream.rangeClosed(0, 100).forEach(System.out::println);
 
 		// You can also do all kinds of operations you can do in a Stream, 
 		// like filtering.
 		// Let's print every even number from 0 to 100.
 		IntStream.rangeClosed(0, 100)
 			.filter(n -> n%2==0)
-			.forEach(n -> System.out.println(n));
+			.forEach(System.out::println);
 
 		// Or mapping
 		// Let's print the triple of every number from 0 to 100.
 		IntStream.rangeClosed(0, 100)
-		.map(n -> n*3)
-		.forEach(n -> System.out.println(n));
+			.map(n -> n*3)
+			.forEach(System.out::println);
 
 		// We can also  it into a regular Stream
 		// Let's print every number from 0 to 100 along with its triple.
 		IntStream.rangeClosed(0, 100)
-		.mapToObj(x -> x)
-		.map(x -> "The triple of " + x + " is " + x*3)
-		.forEach(n -> System.out.println(n));
+			.mapToObj(x -> x)
+			.map(x -> "The triple of " + x + " is " + x*3)
+			.forEach(System.out::println);
 
 		// There's also some specific operations, like sum or average.
 		System.out.println(IntStream.rangeClosed(0, 100).sum());

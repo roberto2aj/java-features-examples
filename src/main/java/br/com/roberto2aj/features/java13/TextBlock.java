@@ -42,16 +42,16 @@ public class TextBlock {
 
 		String indentation1 = """
 						The indentation of the lines all depends 
-						 solely on the position of the first line.
-                        """;
+						 solely on the position of the first line.""";
 
 		String indentation2 = """
 				The indentation of the lines all depends 
-				 solely on the position of the first line.
-               """;
+				 solely on the position of the first line.""";
 		System.out.println(indentation1);
 		System.out.println(indentation2);
 
+		//So indentation1 should be equal to indentation2.
+		System.out.println(indentation1.equals(indentation2));
 	}
 
 }
